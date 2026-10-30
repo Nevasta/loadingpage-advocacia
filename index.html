@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="Advocacia consultiva e contenciosa com atendimento próximo, estratégia e clareza em cada etapa.">
+  <title>Prado Advocacia | Direito com clareza e propósito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f6f5f0;
+      --ink: #1c2924;
+      --muted: #64716b;
+      --green: #21483d;
+      --green-deep: #17362e;
+      --line: #d9ddd5;
+      --accent: #bd7658;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button, a, input, textarea { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .wrap { width: min(1160px, calc(100% - 64px)); margin-inline: auto; }
+    .eyebrow { margin: 0 0 18px; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+    .serif { font-family: var(--serif); font-weight: 400; }
+    .topline { height: 5px; background: var(--green); }
+
+    header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid rgb(28 41 36 / 10%); background: rgb(246 245 240 / 96%); backdrop-filter: blur(12px); }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--green-deep); }
+    .brand-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid var(--green); font-family: var(--serif); font-size: 19px; }
+    .brand-name { font-family: var(--serif); font-size: 19px; letter-spacing: .2px; }
+    .brand-name small { display: block; margin-top: -5px; font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: #48554e; font-size: 13px; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links .nav-cta { padding: 11px 17px; border: 1px solid var(--green); color: var(--green); font-weight: 600; }
+    .nav-links .nav-cta:hover { background: var(--green); color: white; }
+    .menu-toggle { display: none; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); background: transparent; color: var(--green); cursor: pointer; }
+    .menu-toggle svg { width: 20px; height: 20px; }
+
+    .hero { display: grid; min-height: 620px; grid-template-columns: 1fr 1fr; align-items: center; gap: 6%; padding-block: 70px 82px; }
+    .hero-copy { max-width: 520px; padding-block: 24px; animation: rise .7s both; }
+    .hero h1 { max-width: 560px; margin: 0; font-size: clamp(46px, 5.3vw, 72px); letter-spacing: 0; line-height: 1.08; }
+    .hero h1 em { color: var(--green); font-weight: 400; }
+    .hero-description { max-width: 425px; margin: 23px 0 30px; color: var(--muted); font-size: 16px; }
+    .button { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 0 20px; border: 1px solid var(--green); background: var(--green); color: white; font-size: 13px; font-weight: 600; transition: background .2s ease, transform .2s ease; }
+    .button:hover { transform: translateY(-2px); background: var(--green-deep); }
+    .button svg { width: 16px; height: 16px; }
+    .hero-note { display: flex; align-items: center; gap: 11px; margin-top: 34px; color: var(--muted); font-size: 12px; }
+    .hero-note::before { width: 28px; height: 1px; background: var(--accent); content: ""; }
+    .hero-image { position: relative; min-height: 480px; background: #d4d8cf; animation: rise .8s .12s both; }
+    .hero-image img { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .image-caption { position: absolute; right: 0; bottom: 0; max-width: 235px; padding: 16px 19px; background: var(--paper); color: var(--muted); font-size: 11px; }
+    .image-caption strong { display: block; color: var(--ink); font-size: 12px; font-weight: 600; }
+
+    .principles { border-block: 1px solid var(--line); }
+    .principles-inner { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .principle { display: flex; align-items: center; gap: 15px; min-height: 100px; padding: 20px 30px; }
+    .principle:first-child { padding-left: 0; }
+    .principle + .principle { border-left: 1px solid var(--line); }
+    .principle-number { color: var(--accent); font-family: var(--serif); font-size: 25px; }
+    .principle strong { display: block; font-size: 13px; font-weight: 600; }
+    .principle span:last-child { color: var(--muted); font-size: 11px; }
+
+    .section { padding-block: 112px; }
+    .section-heading { display: flex; align-items: end; justify-content: space-between; gap: 32px; margin-bottom: 45px; }
+    .section-heading h2, .about h2, .contact h2 { max-width: 650px; margin: 0; font-size: clamp(34px, 4vw, 49px); letter-spacing: 0; line-height: 1.16; }
+    .section-heading > p { max-width: 320px; margin: 0 0 5px; color: var(--muted); font-size: 14px; }
+    .areas-grid { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--line); }
+    .area { position: relative; min-height: 178px; display: grid; grid-template-columns: 50px 1fr 30px; align-items: start; gap: 20px; padding: 30px 20px 27px 0; border-bottom: 1px solid var(--line); transition: background .2s ease; }
+    .area:nth-child(odd) { margin-right: 35px; }
+    .area:nth-child(even) { padding-left: 35px; border-left: 1px solid var(--line); }
+    .area-index { padding-top: 4px; color: var(--accent); font-size: 11px; }
+    .area h3 { margin: 0 0 9px; font-family: var(--serif); font-size: 25px; font-weight: 400; }
+    .area p { max-width: 390px; margin: 0; color: var(--muted); font-size: 13px; }
+    .area-arrow { margin-top: 4px; color: var(--green); font-size: 20px; transition: transform .2s ease; }
+    .area:hover .area-arrow { transform: translate(3px, -3px); }
+
+    .about-band { background: var(--green-deep); color: #f6f5f0; }
+    .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 11%; align-items: start; padding-block: 100px; }
+    .about .eyebrow { color: #d5a28a; }
+    .about h2 { font-size: clamp(36px, 4vw, 50px); }
+    .about-copy { padding-top: 6px; }
+    .about-copy p { margin: 0 0 20px; color: #d2dbd5; font-size: 15px; }
+    .about-signoff { display: flex; align-items: center; gap: 13px; margin-top: 32px; color: #f1d1bc; font-family: var(--serif); font-size: 19px; }
+    .about-signoff::before { width: 32px; height: 1px; background: var(--accent); content: ""; }
+
+    .faq-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: 11%; }
+    .faq-layout h2 { max-width: 380px; margin: 0; font-size: clamp(34px, 4vw, 48px); line-height: 1.18; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { position: relative; padding: 21px 35px 21px 0; cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { position: absolute; top: 17px; right: 4px; color: var(--accent); content: "+"; font-family: var(--serif); font-size: 23px; font-weight: 400; }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list details p { max-width: 580px; margin: -4px 30px 20px 0; color: var(--muted); font-size: 13px; }
+
+    .contact-band { background: #e9ebe3; }
+    .contact { display: grid; grid-template-columns: .9fr 1.1fr; gap: 11%; padding-block: 100px; }
+    .contact h2 { font-size: clamp(36px, 4vw, 50px); }
+    .contact-intro { max-width: 390px; margin: 19px 0 30px; color: var(--muted); font-size: 14px; }
+    .contact-email { display: inline-block; padding-bottom: 4px; border-bottom: 1px solid var(--accent); color: var(--green); font-size: 14px; font-weight: 600; }
+    .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 19px 16px; align-content: start; }
+    .field { display: grid; gap: 7px; }
+    .field-wide { grid-column: 1 / -1; }
+    .field label { color: #48554e; font-size: 11px; font-weight: 600; }
+    .field input, .field textarea { width: 100%; min-height: 46px; padding: 11px 12px; border: 1px solid #cbd1c7; border-radius: 0; background: var(--paper); color: var(--ink); font-size: 13px; }
+    .field textarea { min-height: 105px; resize: vertical; }
+    .form-footer { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .form-note { max-width: 260px; margin: 0; color: var(--muted); font-size: 10px; }
+    .form-status { grid-column: 1 / -1; min-height: 20px; margin: -9px 0 0; color: var(--green); font-size: 12px; }
+
+    footer { background: var(--green-deep); color: #f6f5f0; }
+    .footer-main { display: flex; justify-content: space-between; gap: 32px; padding-block: 33px; }
+    .footer-brand { color: white; }
+    .footer-meta { color: #c3d0c8; font-size: 11px; text-align: right; }
+    .footer-meta p { margin: 0 0 4px; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-block: 15px; border-top: 1px solid rgb(255 255 255 / 16%); color: #aebdb4; font-size: 10px; }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 40px, 560px); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: grid; }
+      .nav-links { position: absolute; top: 68px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px 20px 17px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.open { display: grid; }
+      .nav-links a { padding: 12px 0; }
+      .nav-links .nav-cta { margin-top: 6px; padding: 10px 12px; text-align: center; }
+      .hero { min-height: 0; grid-template-columns: 1fr; gap: 34px; padding-block: 54px 58px; }
+      .hero h1 { max-width: 490px; font-size: clamp(43px, 11vw, 61px); }
+      .hero-description { font-size: 15px; }
+      .hero-image { min-height: 360px; }
+      .principles-inner { grid-template-columns: 1fr; padding-block: 7px; }
+      .principle, .principle:first-child { min-height: 73px; padding: 13px 0; }
+      .principle + .principle { border-top: 1px solid var(--line); border-left: 0; }
+      .section { padding-block: 76px; }
+      .section-heading { display: block; margin-bottom: 31px; }
+      .section-heading > p { margin-top: 17px; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .area { min-height: 150px; padding-right: 0; }
+      .area:nth-child(odd) { margin-right: 0; }
+      .area:nth-child(even) { padding-left: 0; border-left: 0; }
+      .about { grid-template-columns: 1fr; gap: 25px; padding-block: 76px; }
+      .faq-layout { grid-template-columns: 1fr; gap: 31px; }
+      .contact { grid-template-columns: 1fr; gap: 37px; padding-block: 76px; }
+      .footer-main { align-items: start; }
+    }
+    @media (max-width: 460px) {
+      .wrap { width: calc(100% - 36px); }
+      .hero-image { min-height: 300px; }
+      .image-caption { max-width: 205px; padding: 12px 14px; }
+      .area { grid-template-columns: 35px 1fr 22px; gap: 12px; }
+      .area h3 { font-size: 22px; }
+      .contact-form { grid-template-columns: 1fr; }
+      .field-wide, .form-footer, .form-status { grid-column: auto; }
+      .form-footer { align-items: start; flex-direction: column; }
+      .footer-main { flex-direction: column; }
+      .footer-meta { text-align: left; }
+      .footer-bottom { flex-direction: column; gap: 5px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topline" aria-hidden="true"></div>
+  <header>
+    <nav class="nav wrap" aria-label="Navegação principal">
+      <a class="brand" href="#inicio" aria-label="Prado Advocacia, início">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span class="brand-name">Prado<small>Advocacia</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#atuacao">Atuação</a>
+        <a href="#escritorio">O escritório</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a class="nav-cta" href="#contato">Fale conosco <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Advocacia estratégica e próxima</p>
+        <h1 class="serif" id="hero-title">Direito claro.<br><em>Decisões seguras.</em></h1>
+        <p class="hero-description">Orientação jurídica com escuta, transparência e estratégia para pessoas e negócios em momentos que pedem confiança.</p>
+        <a class="button" href="#contato">Converse com nossa equipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7" /></svg></a>
+        <p class="hero-note">Atendimento individual, do primeiro contato aos próximos passos.</p>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="Ambiente de trabalho contemporâneo, iluminado e acolhedor" fetchpriority="high">
+        <div class="image-caption"><strong>Relações construídas com confiança.</strong>Um atendimento atento começa pela escuta.</div>
+      </div>
+    </section>
+
+    <section class="principles" aria-label="Princípios de atendimento">
+      <div class="principles-inner wrap">
+        <div class="principle"><span class="principle-number">01</span><div><strong>Clareza em cada etapa</strong><span>Informação direta e sem juridiquês.</span></div></div>
+        <div class="principle"><span class="principle-number">02</span><div><strong>Estratégia responsável</strong><span>Análise cuidadosa de cada cenário.</span></div></div>
+        <div class="principle"><span class="principle-number">03</span><div><strong>Proximidade de verdade</strong><span>Acompanhamento com atenção e respeito.</span></div></div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="atuacao" aria-labelledby="areas-title">
+      <div class="section-heading">
+        <div><p class="eyebrow">Como podemos ajudar</p><h2 class="serif" id="areas-title">Conhecimento jurídico,<br>olhar para cada contexto.</h2></div>
+        <p>Atuação consultiva e contenciosa, com abordagem personalizada para cada pessoa, família ou empresa.</p>
+      </div>
+      <div class="areas-grid">
+        <article class="area"><span class="area-index">01</span><div><h3>Direito empresarial</h3><p>Contratos, estruturação de negócios e orientação jurídica para decisões empresariais.</p></div><span class="area-arrow" aria-hidden="true">↗</span></article>
+        <article class="area"><span class="area-index">02</span><div><h3>Direito do trabalho</h3><p>Consultoria e representação jurídica para empresas e profissionais.</p></div><span class="area-arrow" aria-hidden="true">↗</span></article>
+        <article class="area"><span class="area-index">03</span><div><h3>Direito civil</h3><p>Prevenção e resolução de questões contratuais, patrimoniais e de responsabilidade civil.</p></div><span class="area-arrow" aria-hidden="true">↗</span></article>
+        <article class="area"><span class="area-index">04</span><div><h3>Família e sucessões</h3><p>Orientação cuidadosa em temas familiares, planejamento sucessório e inventários.</p></div><span class="area-arrow" aria-hidden="true">↗</span></article>
+      </div>
+    </section>
+
+    <section class="about-band" id="escritorio" aria-labelledby="about-title">
+      <div class="about wrap">
+        <div><p class="eyebrow">O escritório</p><h2 class="serif" id="about-title">Advocacia feita de técnica, diálogo e propósito.</h2></div>
+        <div class="about-copy">
+          <p>Acreditamos que um bom trabalho jurídico começa entendendo as pessoas por trás de cada questão. Por isso, cada atendimento é conduzido com atenção ao contexto, aos objetivos e às possibilidades reais.</p>
+          <p>Com rigor técnico e comunicação transparente, trabalhamos para que você compreenda suas opções e participe das decisões com segurança.</p>
+          <div class="about-signoff">Presença em cada passo.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="duvidas" aria-labelledby="faq-title">
+      <div class="faq-layout">
+        <div><p class="eyebrow">Perguntas frequentes</p><h2 class="serif" id="faq-title">Um começo mais tranquilo.</h2></div>
+        <div class="faq-list">
+          <details><summary>Como funciona o primeiro atendimento?</summary><p>Começamos entendendo sua situação e os objetivos que deseja alcançar. A equipe analisa as informações iniciais e explica os caminhos possíveis, os documentos necessários e os próximos passos.</p></details>
+          <details><summary>Quais documentos devo levar?</summary><p>Isso depende do assunto. No primeiro contato, conte brevemente sobre sua necessidade e indicaremos quais documentos podem ajudar na análise inicial.</p></details>
+          <details><summary>O atendimento pode ser online?</summary><p>Sim. O atendimento pode ser realizado por videoconferência, além das reuniões presenciais mediante agendamento.</p></details>
+          <details><summary>Como são definidos os honorários?</summary><p>Os honorários são apresentados com transparência, considerando a natureza e a complexidade do trabalho, em conformidade com as regras profissionais aplicáveis.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contato" aria-labelledby="contact-title">
+      <div class="contact wrap">
+        <div>
+          <p class="eyebrow">Vamos conversar</p>
+          <h2 class="serif" id="contact-title">Seu próximo passo começa com uma conversa.</h2>
+          <p class="contact-intro">Conte brevemente como podemos ajudar. Nossa equipe retornará para entender melhor sua necessidade.</p>
+          <a class="contact-email" href="mailto:contato@seu-escritorio.com.br">contato@seu-escritorio.com.br</a>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="field"><label for="name">Nome</label><input id="name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="field field-wide"><label for="subject">Como podemos ajudar?</label><textarea id="subject" name="subject" rows="4" required></textarea></div>
+          <div class="form-footer">
+            <p class="form-note">O botão abrirá seu aplicativo de e-mail com a mensagem pronta para revisão. Evite incluir informações confidenciais.</p>
+            <button class="button" type="submit">Preparar mensagem <span aria-hidden="true">↗</span></button>
+          </div>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-main wrap">
+      <a class="brand footer-brand" href="#inicio" aria-label="Prado Advocacia, voltar ao início"><span class="brand-mark" aria-hidden="true">P</span><span class="brand-name">Prado<small>Advocacia</small></span></a>
+      <div class="footer-meta"><p>Atendimento presencial e online, mediante agendamento.</p><p>Conteúdo informativo. Cada caso exige análise individual.</p></div>
+    </div>
+    <div class="footer-bottom wrap"><span>© <span id="year"></span> Prado Advocacia. Todos os direitos reservados.</span><span>Respeito, ética e transparência.</span></div>
+  </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+      menuToggle.setAttribute('aria-expanded', String(!isExpanded));
+      menuToggle.setAttribute('aria-label', isExpanded ? 'Abrir menu' : 'Fechar menu');
+      navigation.classList.toggle('open', !isExpanded);
+    });
+
+    navigation.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
+        navigation.classList.remove('open');
+      }
+    });
+
+    document.querySelector('#contact-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      const values = new FormData(form);
+      const body = `Nome: ${values.get('name')}\nE-mail: ${values.get('email')}\n\n${values.get('subject')}`;
+      const mailto = `mailto:contato@seu-escritorio.com.br?subject=${encodeURIComponent('Contato pelo site')}&body=${encodeURIComponent(body)}`;
+      document.querySelector('#form-status').textContent = 'Abrindo seu aplicativo de e-mail para revisar e enviar a mensagem.';
+      window.location.href = mailto;
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
